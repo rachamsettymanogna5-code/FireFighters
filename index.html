@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FireGuard AI</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>🔥 FireGuard AI</h1>
+        <p>Location-Based Firefighter Rescue System</p>
+    </header>
+
+    <main>
+        <section class="panel">
+            <h2>Find Incident Location</h2>
+
+            <form id="searchForm">
+                <label for="locationInput">Building name or address</label>
+                <input id="locationInput" placeholder="e.g. hospital name and city" required>
+                <button type="submit">Search Location</button>
+            </form>
+
+            <button id="gpsBtn" type="button">
+                📍 Use My Current Location
+            </button>
+
+            <p id="message">Search for an incident location.</p>
+            <div id="map"></div>
+            <p class="note">Map data © OpenStreetMap contributors</p>
+        </section>
+
+        <section class="panel">
+            <h2>Building Floor Plan</h2>
+            <p id="buildingInfo">
+                Search for a location first.
+            </p>
+
+            <label for="floorPlan">Upload the building's floor plan</label>
+            <input id="floorPlan" type="file" accept="image/*">
+
+            <img id="floorImage" alt="Uploaded building floor plan">
+
+            <p class="note">
+                An uploaded floor plan is required to view indoor rooms.
+                The street map does not automatically provide interior layouts.
+            </p>
+        </section>
+
+        <section class="panel">
+            <h2>Victim Information</h2>
+            <p id="coordinates">Location: Not selected</p>
+            <p id="heartRate">Heart rate: No sensor connected</p>
+            <p id="detection">Person detection: No sensor connected</p>
+        </section>
+    </main>
+</body>
+
+</html>
